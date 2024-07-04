@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rivan/core/theme/theme.dart';
+import 'package:rivan/features/auth/presentation/pages/sign_up.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: AppTheme.darkThememode,
+      home: const SignupPage(),
     );
   }
 }
