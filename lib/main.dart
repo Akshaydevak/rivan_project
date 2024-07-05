@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:rivan/core/secrets/app_secrets.dart';
 import 'package:rivan/core/theme/theme.dart';
 import 'package:rivan/features/auth/presentation/pages/login_page.dart';
 
-void main() {
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+Future<void> main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+ final appSupaBase=await Supabase.initialize(anonKey:AppSecrets.supabseAnonKey ,url: AppSecrets.supabaseurl);
   runApp(const MyApp());
 }
 

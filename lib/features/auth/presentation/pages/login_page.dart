@@ -52,7 +52,7 @@ TextEditingController passwordController=TextEditingController();
               const SizedBox(
                 height: 20,
               ),
-              const AuthGradientButton(buttontext: "Sighn in",),
+              const AuthGradientButton(buttontext: "Sign in",),
               const SizedBox(
                 height: 20,
               ),
@@ -62,7 +62,7 @@ TextEditingController passwordController=TextEditingController();
                 },
                 child: RichText(
                   text: TextSpan(
-                      text: "Don\'t have an aoount? ",
+                      text: "Don't have an aoount? ",
                       style: Theme.of(context).textTheme.titleMedium,
                       children: [
                         TextSpan(
