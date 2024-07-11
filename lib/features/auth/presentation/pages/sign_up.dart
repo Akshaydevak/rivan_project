@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rivan/core/theme/app_pellete.dart';
+import 'package:rivan/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:rivan/features/auth/presentation/widgets/auth_field.dart';
 import 'package:rivan/features/auth/presentation/widgets/auth_gradiant_button.dart';
 
@@ -60,7 +64,13 @@ TextEditingController passwordController=TextEditingController();
               const SizedBox(
                 height: 20,
               ),
-              const AuthGradientButton(buttontext: "Sign Up",),
+               AuthGradientButton(buttontext: "Sign Up",onPressed: (){
+                log("prinnnn",name: "sign up");
+                if(formKey.currentState?.validate()==true){
+                   context.read<AuthBloc>().add(AuthSignUp(name: nameController.text.trim(), email: emmailController.text.trim(), password: passwordController.text.trim()));
+                }
+               
+               },),
               const SizedBox(
                 height: 20,
               ),

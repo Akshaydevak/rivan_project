@@ -21,6 +21,8 @@ class AuthReposiotryImpl implements AuthReposiotry {
       required String email,
       required String password}) async {
     try {
+        print("bloczzzzzzzzzzzzzzzzzzzz${email}");
+
     final dataResponse=await  remoteDataSource.signUpWithEmailnamePassword(name: name, email: email, password: password);
     return right(dataResponse);
 

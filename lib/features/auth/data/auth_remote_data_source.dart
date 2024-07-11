@@ -11,9 +11,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource{
   Future<String> signUpWithEmailnamePassword({required String name, required String email, required String password}) async {
   
   try{
-      final response=await  supaBaseClient.auth.signUp(password: password,email: email,data: {
+      print("blocssssssssssssssaaaaaa${supaBaseClient}");
+      final response=await  Supabase.instance.client  .auth.signUp(password: password,email: email,data: {
       'name':name
     });
+    print(response);
 if(response.user?.id==null){
   throw const  ServerException("User  is null");
 }
